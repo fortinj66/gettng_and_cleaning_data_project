@@ -1,0 +1,17 @@
+{
+    "contents" : "library(reshape2)\n\nDataLabels = read.table('features.txt')\n\n# Load Test Data and Label Columns\ntestSubjects = read.table('test/subject_test.txt')\ntestExercise = read.table('test/y_test.txt')\ntestData = read.table('test/X_test.txt')\nnames(testSubjects) = \"subject\"\nnames(testExercise) = \"exercise\"\nnames(testData) = DataLabels$V2\n\n# Load Training Data and Label Colums\ntrainSubjects = read.table('train/subject_train.txt')\ntrainExercise = read.table('train/y_train.txt')\ntrainData = read.table('train/X_train.txt')\nnames(trainSubjects) = \"subject\"\nnames(trainExercise) = \"exercise\"\nnames(trainData) = DataLabels$V2\n\n# Get Column labels with \"mean\" or \"std\" in them\nSubsetDataLabels = as.vector(DataLabels[grep(\"mean[^a-zA-Z]|std\",DataLabels$V2),\"V2\"])\n\n# Subset data \ntestDataSubset = testData[SubsetDataLabels]\ntrainDataSubset = trainData[SubsetDataLabels]\n\n# Get list of all Column names\nSubsetDataLabels = names(testDataSubset)\n\n# Make column name more appropriate\nSubsetDataLabels = gsub(\"Acc\", \"accel\",SubsetDataLabels)\nSubsetDataLabels = gsub(\"Mag\", \"magnitude\",SubsetDataLabels)\nSubsetDataLabels = gsub(\"-\", \"\",SubsetDataLabels)\nSubsetDataLabels = gsub(\"mean\\\\(\\\\)\", \"mean\",SubsetDataLabels)\nSubsetDataLabels = gsub(\"std\\\\(\\\\)\", \"standarddeviation\",SubsetDataLabels)\nSubsetDataLabels = tolower(SubsetDataLabels)\n\n# Apply updated labels\nnames(testDataSubset) = SubsetDataLabels\nnames(trainDataSubset) = SubsetDataLabels\n\n# Combine into one large dataset\ntestDataFinal = cbind(testSubjects,testExercise,testDataSubset)\ntrainDataFinal = cbind(trainSubjects,trainExercise,trainDataSubset)\nDataFinal = rbind(testDataFinal,trainDataFinal)\n\n# Change activity to text description\nActivityLabels = read.table(\"activity_labels.txt\")\nDataFinal[,2] = ActivityLabels[DataFinal[,2],2]\n\n# Make 'Tall and Skinny Dataset'\nmeltDataFinal = melt(DataFinal, c(\"subject\", \"exercise\"), SubsetDataLabels[-(1:2)])\n\n# Create tidy datset of the mean of all columns grouped by subject and exercise\ntidyData = dcast(meltDataFinal, subject + exercise ~ SubsetDataLabels[-(1:2)],mean)\n\nwrite.csv(tidyData, \"./tidy_data.csv\")",
+    "created" : 1470357360476.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2661296498",
+    "id" : "95CDEFD2",
+    "lastKnownWriteTime" : 1470357287,
+    "path" : "~/coursera/data_cleaning/UCI HAR Dataset/run_analysis.R",
+    "project_path" : "run_analysis.R",
+    "properties" : {
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

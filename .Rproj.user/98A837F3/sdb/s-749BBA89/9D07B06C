@@ -1,0 +1,18 @@
+{
+    "contents" : "# Introduction\n\nThis project involves the transformation of the dataset taken from [Human Activity Recognition Using Smartphones](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones) into a condensed form of the dataset consisting of the mean of all data columns grouped by subject and exercise.\n\n* several transformations were applied:\n** test and training data were combined into one dataset along with participant and exercise data.  These had been seperated prior\n** Column names were added and modified for readibility.  See original dataset features_info.txt for column descriptions\n** final dataset was made \"Tall and Skinny\" using the melt function with subject and exercise as keys\n** final tidy dataset was created using dcast() grouped by subject and exercise and taking the mean() of the data column\n** The tiny dataset was saved to \"tidy_data.csv\"\n",
+    "created" : 1470357701181.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3361994757",
+    "id" : "9D07B06C",
+    "lastKnownWriteTime" : 1470359264,
+    "path" : "~/coursera/data_cleaning/UCI HAR Dataset/CodeBook.md",
+    "project_path" : "CodeBook.md",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "type" : "markdown"
+}

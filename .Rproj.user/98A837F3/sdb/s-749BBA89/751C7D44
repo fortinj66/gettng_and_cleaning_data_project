@@ -1,0 +1,25 @@
+{
+    "contents" : "",
+    "created" : 1470355965320.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "751C7D44",
+    "lastKnownWriteTime" : 45410689220864,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "5ekl1temrt",
+        "caption" : "ActivityLabels",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=ActivityLabels&cache_key=5ekl1temrt",
+        "displayedObservations" : "6",
+        "environment" : "",
+        "object" : "ActivityLabels",
+        "totalObservations" : "6",
+        "variables" : "2"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

@@ -1,0 +1,25 @@
+{
+    "contents" : "",
+    "created" : 1470358853757.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "925394C3",
+    "lastKnownWriteTime" : 7022344664205377792,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "gihxgrciwf",
+        "caption" : "DataFinal",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=DataFinal&cache_key=gihxgrciwf",
+        "displayedObservations" : "10299",
+        "environment" : "",
+        "object" : "DataFinal",
+        "totalObservations" : "10299",
+        "variables" : "68"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}
