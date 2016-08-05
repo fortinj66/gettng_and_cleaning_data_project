@@ -2,7 +2,7 @@
 
 This project involves the transformation of the dataset taken from [Human Activity Recognition Using Smartphones](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones) into a condensed form of the dataset consisting of the mean of all data columns grouped by subject and exercise.
 
-* several transformations were applied:
+Several transformations were applied:
 
 * test and training data were combined into one dataset along with participant and exercise data.  These had been seperated prior
 
