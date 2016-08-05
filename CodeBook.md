@@ -4,12 +4,12 @@ This project involves the transformation of the dataset taken from [Human Activi
 
 * several transformations were applied:
 
-** test and training data were combined into one dataset along with participant and exercise data.  These had been seperated prior
+* test and training data were combined into one dataset along with participant and exercise data.  These had been seperated prior
 
-** Column names were added and modified for readibility.  See original dataset features_info.txt for column descriptions
+* Column names were added and modified for readibility.  See original dataset features_info.txt for column descriptions
 
-** final dataset was made "Tall and Skinny" using the melt function with subject and exercise as keys
+* final dataset was made "Tall and Skinny" using the melt function with subject and exercise as keys
 
-** final tidy dataset was created using dcast() grouped by subject and exercise and taking the mean() of the data column
+* final tidy dataset was created using dcast() grouped by subject and exercise and taking the mean() of the data column
 
-** The tiny dataset was saved to "tidy_data.csv"
+* The tiny dataset was saved to "tidy_data.csv"
